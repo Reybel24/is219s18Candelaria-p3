@@ -35,7 +35,7 @@
       
       <div class="container">
 
-        <div class="col-md-6" ng-repeat="m in movies"> 
+        <div class="col-md-6 movie-h" ng-repeat="m in movies"> 
             <div class="thumbnail">
 
 					<img class="poster" src="{{m.posters[m.posterindex]}}" ng-click="posterClick($index)"/>
@@ -43,9 +43,9 @@
 					
 					<p class="title">{{m.title}} ({{m.country}})</p> 
 					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{m.iscore}} </p>
-					<p class="runtime">Runtime: {{m.runtime}}</p> 
-					<p class="released">Released: {{m.released}} | Rated: {{m.rating}}</p>
-					<p class="websites">Websites: <a>{{m.imdb}}</a> | <a>{{m.website}}</a></p>
+					<p class="runtime">Runtime: {{timeText(m.runtime)}}</p> 
+					<p class="released">Released: {{m.released | date}} | Rated: {{m.rating}}</p>
+					<p class="websites">Websites: <a href="{{m.imdb}}">IMDB</a> | <a href="{{m.website}}">Official</a></p>
 					
 		            <div class="social">
 		              <p class="likes" ng-click="like($index)"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{m.likes}}</p>

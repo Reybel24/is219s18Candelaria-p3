@@ -88,8 +88,49 @@ app.controller('HomeController', ['$scope', function($scope) {
       likes:	812,
       dislikes:	101,
       posterindex: 0
-	}
-	
+  },
+  { 
+      title:	'Interstellar', 
+      iscore:	8.6,
+      rating:	'PG-13',
+      runtime:	169,
+      released:	new Date('2014', '11', '7'),
+      country:	'USA',
+      posters:	['img/interstellar1.jpg', 'img/interstellar2.jpg'],
+      imdb:		'https://www.imdb.com/title/tt0816692',
+      website:	'http://www.interstellarmovie.net/',
+      likes:	1136,
+      dislikes:	117,
+      posterindex: 0
+  },
+    { 
+      title:	'Fantastic Mr. Fox', 
+      iscore:	7.8,
+      rating:	'PG',
+      runtime:	87,
+      released:	new Date('2009', '11', '25'),
+      country:	'USA',
+      posters:	['img/fox1.jpg', 'img/fox2.jpg'],
+      imdb:		'https://www.imdb.com/title/tt0432283/?ref_=nv_sr_1',
+      website:	'http://www.foxsearchlight.com/fantasticmrfox/',
+      likes:	957,
+      dislikes:	198,
+      posterindex: 0
+  },
+	  { 
+      title:	'12 Angry Men', 
+      iscore:	8.9,
+      rating:	'PG-13',
+      runtime:	96,
+      released:	new Date('1957', '4', '10'),
+      country:	'USA',
+      posters:	['img/12angrymen1.jpg', 'img/12angrymen2.jpg'],
+      imdb:		'https://www.imdb.com/title/tt0050083/',
+      website:	'https://www.criterion.com/films/27871-12-angry-men',
+      likes:	1419,
+      dislikes:	84,
+      posterindex: 0
+  }
 	
   ];
 	
@@ -114,7 +155,7 @@ app.controller('HomeController', ['$scope', function($scope) {
   }
 
   function dislike(index) {
-    $scope.movies[index].dislikes -= 1;
+    $scope.movies[index].dislikes += 1;
   }
 
   function posterClick(index) {
@@ -125,10 +166,15 @@ app.controller('HomeController', ['$scope', function($scope) {
     }
   }
 
+  function timeText(minutes) {
+    return (Math.floor(minutes/60) + "h " + minutes%60 + "m");
+  }
+
 
   $scope.like = like;
   $scope.dislike = dislike;
   $scope.posterClick = posterClick;
+  $scope.timeText = timeText;
 	
 	
 	
